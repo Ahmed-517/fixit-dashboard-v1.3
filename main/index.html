@@ -6,31 +6,40 @@
     <title>الصفحة الرئيسية</title>
 
     <!-- Main Style Sheets -->
-    <link href="assets/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.rtl.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Custom styles for this template -->
-    <link href="assets/dist/css/dashboard.rtl.css" rel="stylesheet">
   </head>
   <body>
     
+<!-- <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-center" href="#">FIXIT</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="عرض/إخفاء لوحة التنقل">
     <span class="navbar-toggler-icon"></span>
   </button>
   <!-- Start User item  -->
-  <div class="w-100 d-flex justify-content-center">
+  <div class="w-100 d-flex justify-content-lg-end justify-content-md-center pe-lg-5">
     <div class="dropdown">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
         <strong>ahmed</strong>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow" style="">
-        <li><a class="dropdown-item" href="#">اعدادات</a></li>
-        <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
+        <li>
+          <a class="dropdown-item" href="#">
+            <span data-feather="settings" class="align-text-bottom"></span>
+            اعدادات
+          </a></li>
+        <li><a class="dropdown-item" href="#">
+          <span data-feather="user" class="align-text-bottom"></span>
+          الملف الشخصي
+        </a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
+        <li><a class="dropdown-item" href="#">
+          <span data-feather="log-out" class="align-text-bottom"></span>
+          تسجيل الخروج
+        </a></li>
       </ul>
     </div>
   </div>
@@ -38,7 +47,7 @@
   <!-- End User item  -->
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3 sign-out" href="#">تسجيل الخروج</a>
+      <!-- <a class="nav-link px-3 sign-out" href="#">تسجيل الخروج</a> -->
     </div>
   </div>
 </header>
@@ -172,7 +181,7 @@
 </div>
 
 
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
   </body>
