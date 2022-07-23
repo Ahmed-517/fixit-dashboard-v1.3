@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>لوحة التحكم</title>
+
+    <!-- Main Style Sheets -->
+    <link href="assets/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/dist/css/dashboard.rtl.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">FIXIT</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="عرض/إخفاء لوحة التنقل">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="بحث" aria-label="بحث"> -->
+  <div class="w-100">fadf</div>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3 sign-out" href="#">تسجيل الخروج</a>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Start Sidebar -->
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3 sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">
+              <span data-feather="home" class="align-text-bottom"></span>
+              لوحة التحكم
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="requests.html">
+              <span data-feather="file" class="align-text-bottom"></span>
+              الطلبات
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="addUser.html">
+              <span data-feather="users" class="align-text-bottom"></span>
+              اضافة مستخدم
+            </a>
+          </li>
+          <!-- Start Users Collapse -->
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+              المستخدمين
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ps-4 small">
+                <li><a href="students.html" class="link-dark d-inline-flex text-decoration-none rounded">الطلاب</a></li>
+                <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">الفنيين</a></li>
+                <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">المديرين</a></li>
+              </ul>
+            </div>
+          </li>
+          <!-- End Users Collapse -->
+          <li class="nav-item">
+            <a class="nav-link" href="reports.html">
+              <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+              التقارير
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="stat.html">
+              <span data-feather="layers" class="align-text-bottom"></span>
+              احصائيات
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+          <span>التقارير المحفوظة</span>
+          <a class="link-secondary" href="#" aria-label="إضافة تقرير جديد">
+            <span data-feather="plus-circle" class="align-text-bottom"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text" class="align-text-bottom"></span>
+              الشهر الحالي
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text" class="align-text-bottom"></span>
+              الربع الأخير
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+    <!-- End Sidebar -->
+
+    <!-- Start Main Content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      
+      <h2 class="pt-3">ادارة المستخدمين</h2>
+
+      
+      
+      <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">اضافة مستخدم</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">الاسم الأول</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                يرجى إدخال اسم أول صحيح.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">اسم العائلة</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                يرجى إدخال اسم عائلة صحيح.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="username" class="form-label">اسم المستخدم</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" id="username" placeholder="اسم المستخدم" required="">
+              <div class="invalid-feedback">
+                اسم المستخدم الخاص بك مطلوب.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">البريد الإلكتروني <span class="text-muted">(اختياري)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                يرجى إدخال عنوان بريد إلكتروني صحيح لتصلكم تحديثات الشحن.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">العنوان</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 الشارع الأول" required="">
+              <div class="invalid-feedback">
+                يرجى إدخال عنوان الشحن الخاص بك.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address2" class="form-label">عنوان 2 <span class="text-muted">(اختياري)</span></label>
+              <input type="text" class="form-control" id="address2" placeholder="شقة 24">
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">فرع</label>
+              <select class="form-select" id="country" required="">
+                <option value="">اختر...</option>
+                <option>الخلفاوي</option>
+                <option>روض الفرج</option>
+              </select>
+              <div class="invalid-feedback">
+                يرجى اختيار بلد صحيح.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state" class="form-label">المنطقة</label>
+              <select class="form-select" id="state" required="">
+                <option value="">اختر...</option>
+                <option>كاليفورنيا</option>
+              </select>
+              <div class="invalid-feedback">
+                يرجى اختيار اسم منطقة صحيح.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">الرمز البريدي</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required="">
+              <div class="invalid-feedback">
+                الرمز البريدي مطلوب.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">
+                امكانية تسجيل الدخول برقم الهاتف
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info">
+                امكانية تسجيل الدخول باستخدام الـID
+            </label>
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">نوع المستخدم</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+              <label class="form-check-label" for="credit">طالب</label>
+            </div>
+            <div class="form-check">
+              <input id="cash" name="paymentMethod" type="radio" class="form-check-input" required="">
+              <label class="form-check-label" for="cash">مدير</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+              <label class="form-check-label" for="paypal">فني</label>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">اضافة مستخدم جديد</button>
+        </form>
+      </div>
+    </div>
+    </main>
+    <!-- End Main Content -->
+  </div>
+</div>
+
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+  </body>
+</html>
