@@ -196,3 +196,57 @@ new Chart("weekly", {
     }
   }
 });
+
+
+// Weekly Requests
+const Months = ["August", "September", "October", "November", "December", "January", "February"];
+
+const dataYearly = {
+  labels: Months,
+  datasets: [
+    {
+      label: 'All Requests',
+      data: [
+        3,
+        9,
+        19,
+        18,
+        6,
+        12,
+        20
+      ],
+      borderColor: "red",
+      // backgroundColor: "Utils.transparentize(Utils.CHART_COLORS.red, 0.5)",
+    },
+    {
+      label: 'Solved',
+      data: [
+        3,
+        7,
+        13,
+        18,
+        4,
+        8,
+        20
+      ],
+      borderColor: "blue",
+      // backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+    }
+  ]
+};
+new Chart("canvas", {
+  type: 'line',
+  data: dataYearly,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Line Chart'
+      }
+    }
+  },
+});
