@@ -8,7 +8,7 @@
     <!-- Main Style Sheets -->
     <link href="assets/css/bootstrap.rtl.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     
@@ -114,7 +114,7 @@
             <!-- Start User 1 -->
             <div class="card" style="width: 18rem;">
               <div class="card-body">
-                <h5 class="card-title">اسم الطالب</h5>
+                <h5 class="card-title">اسم الطالب 1</h5>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">الرقم الجامعي</li>
@@ -123,7 +123,7 @@
               </ul>
               <div class="card-body">
                 <a href="#" class="card-link btn btn-dark">تعديل</a>
-                <a href="#" class="card-link btn btn-danger">حذف</a>
+                <a href="#" class="card-link btn btn-danger delete">حذف</a>
               </div>
             </div>
             <!-- End User 1 -->
@@ -131,7 +131,7 @@
             <!-- User 2 -->
             <div class="card" style="width: 18rem;">
               <div class="card-body">
-                <h5 class="card-title">اسم الطالب</h5>
+                <h5 class="card-title">اسم الطالب 2</h5>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">الرقم الجامعي</li>
@@ -140,7 +140,7 @@
               </ul>
               <div class="card-body">
                 <a href="#" class="card-link btn btn-dark">تعديل</a>
-                <a href="#" class="card-link btn btn-danger">حذف</a>
+                <a href="#" class="card-link btn btn-danger delete">حذف</a>
               </div>
             </div>
             <!-- End User 2 -->
@@ -148,7 +148,7 @@
             <!-- User 3 -->
             <div class="card" style="width: 18rem;">
               <div class="card-body">
-                <h5 class="card-title">اسم الطالب</h5>
+                <h5 class="card-title">اسم الطالب 3</h5>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">الرقم الجامعي</li>
@@ -157,7 +157,7 @@
               </ul>
               <div class="card-body">
                 <a href="#" class="card-link btn btn-dark">تعديل</a>
-                <a href="#" class="card-link btn btn-danger">حذف</a>
+                <a href="#" class="card-link btn btn-danger delete">حذف</a>
               </div>
             </div>
             <!-- End User 3 -->
@@ -165,7 +165,7 @@
             <!-- User 4 -->
             <div class="card" style="width: 18rem;">
               <div class="card-body">
-                <h5 class="card-title">اسم الطالب</h5>
+                <h5 class="card-title">اسم الطالب 4</h5>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">الرقم الجامعي</li>
@@ -174,7 +174,7 @@
               </ul>
               <div class="card-body">
                 <a href="#" class="card-link btn btn-dark">تعديل</a>
-                <a href="#" class="card-link btn btn-danger">حذف</a>
+                <a href="#" class="card-link btn btn-danger delete">حذف</a>
               </div>
             </div>
             <!-- End User 4 -->
@@ -192,5 +192,10 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+      <script>
+        $('.delete').on('click', function(){
+          $(this).parent().parent().remove();
+        });
+      </script>
   </body>
 </html>
