@@ -19,8 +19,10 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 100; /* Behind the navbar */
-  padding: 48px 0 0; /* Height of navbar */
+  z-index: 100;
+  /* Behind the navbar */
+  padding: 48px 0 0;
+  /* Height of navbar */
   box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
 }
 
@@ -33,7 +35,8 @@ body {
 .sidebar-sticky {
   height: calc(100vh - 48px);
   overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
 }
 
 .sidebar .nav-link {
@@ -81,11 +84,11 @@ body {
 }
 
 .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 @media (min-width: 768px) {
@@ -132,17 +135,20 @@ body {
 }
 
 .users .card {
-  margin: 10px; 
+  margin: 10px;
 }
 
-.dropdown-toggle { outline: 0; }
+.dropdown-toggle {
+  outline: 0;
+}
 
 .btn-toggle {
-    padding: .25rem .5rem;
-    font-weight: 600;
-    color: rgba(0, 0, 0, .65);
-    background-color: transparent;
+  padding: .25rem .5rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, .65);
+  background-color: transparent;
 }
+
 .btn-toggle:hover,
 .btn-toggle:focus {
   /* color: rgba(0, 0, 0, .85);
@@ -150,19 +156,20 @@ body {
 }
 
 .btn-toggle::before {
-    width: 1.25em;
-    margin-left: 5px;
-    line-height: 0;
-    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
-    transition: transform .35s ease;
-    transform-origin: .5em 50%;
+  width: 1.25em;
+  margin-left: 5px;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
 }
 
 .btn-toggle[aria-expanded="true"] {
-    color: rgba(0, 0, 0, .85);
+  color: rgba(0, 0, 0, .85);
 }
+
 .btn-toggle[aria-expanded="true"]::before {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .btn-toggle-nav a {
@@ -170,6 +177,7 @@ body {
   margin-top: .125rem;
   margin-left: 1.25rem;
 }
+
 .btn-toggle-nav a:hover,
 .btn-toggle-nav a:focus {
   background-color: #d2f4ea;
@@ -184,4 +192,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.solved {
+  color: blue !important;
+}
+
+.unSolved {
+  color: red !important;
 }
