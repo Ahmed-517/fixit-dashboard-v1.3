@@ -1,0 +1,140 @@
+<h2 class="pt-3 text-center">اضافة مستخدم</h2>
+
+
+
+<div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="col-md-9 col-lg-5 col-10">
+        <form class="needs-validation" novalidate="">
+            <div class="row g-3">
+                <div class="">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
+                                id="firstRadio" checked>
+                            <label class="form-check-label stretched-link" for="firstRadio">طالب</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
+                                id="secondRadio">
+                            <label class="form-check-label stretched-link" for="secondRadio">مدير</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
+                                id="thirdRadio">
+                            <label class="form-check-label stretched-link" for="thirdRadio">فني</label>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label">الاسم الأول</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                    <div class="invalid-feedback">
+                        يرجى إدخال اسم أول صحيح.
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="lastName" class="form-label">اسم العائلة</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                    <div class="invalid-feedback">
+                        يرجى إدخال اسم عائلة صحيح.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="username" class="form-label">اسم المستخدم</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" id="username" placeholder="اسم المستخدم" required="">
+                        <div class="invalid-feedback">
+                            اسم المستخدم الخاص بالمستخدم الجديد مطلوب.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="email" class="form-label">البريد الإلكتروني <span
+                            class="text-muted">(اختياري)</span></label>
+                    <div class="input-group has-validation">
+                        <span dir="ltr" class="input-group-text">@feng.bu.edu.eg</span>
+                        <input type="email" class="form-control" id="email" placeholder="a12345">
+                        <div class="invalid-feedback">
+                            يرجى إدخال عنوان بريد إلكتروني صحيح.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="address" class="form-label">كلمة المرور</label>
+                    <input dir="ltr" type="password" class="form-control" id="address" required="">
+                    <div class="invalid-feedback">
+                        يرجى إدخال كلمة المرور الخاصة بالمستخدم.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="address2" class="form-label">اعد كتابة كلمة المرور</label>
+                    <input type="password" class="form-control" id="address2" required="">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="country" class="form-label">فرع</label>
+                    <select class="form-select" id="country" required="">
+                        <option value="">اختر...</option>
+                        <option>الخلفاوي</option>
+                        <option>روض الفرج</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        يرجى اختيار فرع صحيح.
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="state" class="form-label">وظيفة الفني</label>
+                    <select class="form-select" id="state">
+                        <option value="">اختر...</option>
+                        <option>اعطال كهربية</option>
+                        <option>زجاج</option>
+                        <option>شبكات</option>
+                        <option>تكييفات</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        يرجى اختيار وظيفة صحيحة .
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="zip" class="form-label">رقم الهاتف</label>
+                    <input type="text" class="form-control" id="zip" placeholder="" required="">
+                    <div class="invalid-feedback">
+                        رقم الهاتف مطلوب.
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="same-address">
+                <label class="form-check-label" for="same-address">
+                    امكانية تسجيل الدخول برقم الهاتف
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="save-info">
+                <label class="form-check-label" for="save-info">
+                    امكانية تسجيل الدخول باستخدام الـID
+                </label>
+            </div>
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">اضافة مستخدم جديد</button>
+        </form>
+    </div>
+</div>

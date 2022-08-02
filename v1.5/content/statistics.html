@@ -1,0 +1,72 @@
+
+
+<h1 class="h2" id="stati">احصائيات</h1>
+
+<div class="row">
+
+    <div class="col-12 col-lg-6">
+        <div class="card">
+            <h5 class="card-header"> Rod حالة المشكلة</h5>
+            <div class="card-body">
+                <canvas id="rodRequestStatus" style="width:100%"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-6 mb-4">
+        <div class="card">
+            <h5 class="card-header"> Khalafawi حالة المشكلة</h5>
+            <div class="card-body">
+                <canvas id="khalRequestStatus"></canvas>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-12 mb-4">
+        <div class="card">
+            <h5 class="card-header">The Problem with status</h5>
+            <div class="card-body">
+                <canvas id="weekly" style="width:100%;"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-7">
+        <div class="card">
+            <h5 class="card-header">All Requests and the solved</h5>
+            <div class="card-body">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-5">
+        <div class="card">
+            <h5 class="card-header">Problem Types</h5>
+            <div class="card-body">
+                <canvas id="myChartType"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">مشاركة</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">تصدير</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar" class="align-text-bottom"></span>
+                هذا الأسبوع
+            </button>
+        </div>
+    </div>
+</div>
+
+<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+
+<script src="dashboard.js"></script>
+<!-- <script src="dashboard.js"></script> -->

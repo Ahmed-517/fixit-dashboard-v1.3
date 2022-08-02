@@ -1,0 +1,152 @@
+<h2 class="pt-3">الطلبات</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">تاريخ</th>
+              <th scope="col">النوع</th>
+              <th scope="col">مبنى</th>
+              <th scope="col">حالة المشكة</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1,001</td>
+              <td> /   / </td>
+              <td>كهربية</td>
+              <td>روض الفرج</td>
+              <td class="solved">محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,002</td>
+              <td> /   / </td>
+              <td>نوع المشكلة</td>
+              <td>الخلفاوي</td>
+              <td class="unSolved">غير محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,003</td>
+              <td> /   / </td>
+              <td>الشبكة</td>
+              <td>الخلفاوي</td>
+              <td class="unSolved">غير محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,003</td>
+              <td> /   / </td>
+              <td>تثري</td>
+              <td>روض الفرج</td>
+              <td class="solved">محلولة</td>
+              <td><button class="btn btn btn-close dRequest"></button></td>
+            </tr>
+            <tr>
+              <td>1,004</td>
+              <td>الجدول</td>
+              <td>بيانات</td>
+              <td>تنسيق</td>
+              <td class="solved">محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,005</td>
+              <td>قيمة</td>
+              <td>مبهة</td>
+              <td>الجدول</td>
+              <td class="unSolved">غير محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,006</td>
+              <td>قيمة</td>
+              <td>توضيحية</td>
+              <td>غنية</td>
+              <td class="unSolved">غير محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,007</td>
+              <td>تثري</td>
+              <td>مفيدة</td>
+              <td>معلومات</td>
+              <td class="solved">محلولة</td>
+              <td><button class="btn-sm btn btn-close dRequest"></button></td>
+            </tr>
+            <tr>
+              <td>1,008</td>
+              <td>بيانات</td>
+              <td>عشوائية</td>
+              <td>تثري</td>
+              <td class="unSolved">غير محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,009</td>
+              <td>تثري</td>
+              <td>مبهة</td>
+              <td>تصميم</td>
+              <td class="unSolved">غير محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,010</td>
+              <td>عشوائية</td>
+              <td>غنية</td>
+              <td>قيمة</td>
+              <td class="unSolved">غير محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,011</td>
+              <td>معلومات</td>
+              <td>تثري</td>
+              <td>توضيحية</td>
+              <td class="solved">محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,012</td>
+              <td>الجدول</td>
+              <td>تثري</td>
+              <td>تنسيق</td>
+              <td class="unSolved">غير محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,013</td>
+              <td>قيمة</td>
+              <td>مبهة</td>
+              <td>الجدول</td>
+              <td class="unSolved">غير محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,014</td>
+              <td>قيمة</td>
+              <td>توضيحية</td>
+              <td>غنية</td>
+              <td class="solved">محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+            <tr>
+              <td>1,015</td>
+              <td>بيانات</td>
+              <td>مفيدة</td>
+              <td>معلومات</td>
+              <td class="solved">محلولة</td>
+              <td><button class="btn-sm btn btn-danger dRequest">حذف</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <script>
+        $('.dRequest').on('click', function(){
+          $(this).parent().parent().remove();
+        });
+      </script>
