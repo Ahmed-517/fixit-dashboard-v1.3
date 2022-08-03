@@ -210,3 +210,11 @@ body {
 .unSolved {
   color: red !important;
 }
+
+/* Start Requests */
+tbody tr{
+  cursor: pointer;
+}
+tbody tr:hover {
+  background-color: #a0a0a0;
+}
