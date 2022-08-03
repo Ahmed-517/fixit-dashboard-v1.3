@@ -16,9 +16,32 @@
 </head>
 
 <body>
-  <section class="login">
-    
+
+  <!-- Start Login Page -->
+  <section class="login d-flex justify-content-center align-items-center">
+    <form class="login-form text-center">
+      <div class="">
+        <img class="mb-4" src="" alt="website logo" width="72" height="72">
+      </div>
+      <h1 class="h3 mb-3 font-weight-normal">تسجيل الدخول</h1>
+      <!-- <label for="inputEmail" class="text-start">البريد الاكتروني</label> -->
+      <input dir="ltr" type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address"
+        required="" autofocus="">
+      <!-- <label for="inputPassword" class="sr-only text-start">كلمة المرور</label> -->
+      <input dir="ltr" type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
+        required="">
+      <div class="checkbox mb-3">
+        <label>
+          <input class="mt-3" type="checkbox" value="remember-me"> تذكرني
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary w-100" type="submit">تسجيل الدخول</button>
+      <p dir="ltr" class="mt-5 mb-3 text-muted">© 2022-2023</p>
+    </form>
   </section>
+  <!-- End Login Page -->
+
+
   <section class="homeAdmin">
     <!-- <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -50,7 +73,7 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">
+            <li><a class="dropdown-item" id="logOut" href="#">
                 <span data-feather="log-out" class="align-text-bottom"></span>
                 تسجيل الخروج
               </a></li>
@@ -190,6 +213,92 @@
   </section>
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+    import {
+      createUserWithEmailAndPassword,
+      getAuth,
+      onAuthStateChanged,
+      signInWithEmailAndPassword,
+      signOut
+    } from 'https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js'
+    import {
+      getFirestore, collection, onSnapshot,
+      addDoc, deleteDoc, doc,
+      query, where, orderBy, serverTimestamp,
+      getDoc,
+      updateDoc
+    } from 'https://www.gstatic.com/firebasejs/9.9.1/firebase-firestore.js'
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAUxgEruPP38L-8o5wloQpzlIXBw1LLOv0",
+      authDomain: "test-338f7.firebaseapp.com",
+      databaseURL: "https://test-338f7-default-rtdb.firebaseio.com",
+      projectId: "test-338f7",
+      storageBucket: "test-338f7.appspot.com",
+      messagingSenderId: "819712021026",
+      appId: "1:819712021026:web:8b26a81c713873ccd1b07b",
+      measurementId: "G-JE138SYG4F"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    // init services
+    const db = getFirestore();
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        // const uid = user.uid;
+        console.log('user is logged in');
+        console.log(user);
+        $('.login').remove();
+        $('.homeAdmin').css('display', 'block');
+
+      } else {
+        // User is signed out
+        // ...
+        console.log('user is logged out');
+      }
+    });
+
+    // Sign in
+    const loginForm = document.querySelector('.login-form')
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault()
+
+      const email = loginForm.email.value;
+      const password = loginForm.password.value;
+
+      signInWithEmailAndPassword(auth, email, password)
+      .then((cred) => {
+          console.log('user logged in: ', cred.user);
+          $('.login').remove();
+          $('.homeAdmin').css('display', 'block');
+        })
+        .catch((err) => {
+          console.log(err.message);
+        })
+      })
+
+    $(document).on('click','#logOut',function(e){
+      e.preventDefault()
+      console.log('user logged out');
+      auth.signOut().then(() => {
+        window.location.href="/v1.5"
+    })
+    })
+  </script>
+  <!-- <script src="assets/js/auth.js"></script> -->
   <script>
     $(document).ready(function () {
       $('li.home').click(function () {
