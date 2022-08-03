@@ -10,6 +10,15 @@ body {
   height: 16px;
 }
 
+.login {
+  height: 100vh;
+  
+}
+
+.homeAdmin {
+  display: none;
+}
+
 /*
  * Sidebar
  */
