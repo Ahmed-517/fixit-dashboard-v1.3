@@ -153,31 +153,114 @@
 </ul>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal
-</button>
 
-<!-- Modal -->
+
+<!--
+  Start 
+  Modal
+-->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">
+          Modal title
+        </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+
+        <!-- Start Modal Body  -->
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="fw-bold">النوع</div>
+            <div id="type"></div>
+          </li>
+          <li class="list-group-item">
+            <div class="fw-bold">الطابق</div>
+            <div id="floor"></div>
+          </li>
+          <li class="list-group-item">
+            <div class="fw-bold">القاعة</div>
+            <div id="room"></div>
+          </li>
+          <li class="list-group-item">
+            <div class="fw-bold">الوقت</div>
+            <div id="time"></div>
+          </li>
+          <li class="list-group-item">
+            <div class="fw-bold">وصف المشكلة</div>
+            <div id="description"></div>
+          </li>
+        </ul>
+
+        <!-- Start Assign Tracking -->
+        <div dir="rtl" class="wrapper">
+          <ul class="StepProgress">
+            <li class="StepProgress-item current"><strong>Post a contest</strong></li>
+            <li class="StepProgress-item current"><strong>Post a contest</strong></li>
+            <li class="StepProgress-item current"><strong>Post a contest</strong></li>
+            <li class="StepProgress-item is-done">
+              <strong>Award an entry</strong>
+              <div>ffsdfafg</div>
+              Got more entries that you love? Buy more entries anytime! Just hover on your favorite entry and click
+              the Buy button
+            </li>
+            <li class="StepProgress-item current"><strong>Post a contest</strong></li>
+      
+            <li class="StepProgress-item">
+              <strong>اسناد الى</strong>
+              <button>button</button>
+            </li>
+      
+            <li class="StepProgress-item"><strong>Post a contest</strong></li>
+            <!-- <li class="StepProgress-item"><strong>Handover</strong></li>
+              <li class="StepProgress-item"><strong>Provide feedback</strong></li> -->
+          </ul>
+        </div>
+        <!-- End Assign Tracking -->
+
+
+        <div id="innerModal"></div>
+
+
+        <!-- End Modal Body  -->
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+          data-bs-toggle="modal">تعديل</button>
       </div>
     </div>
   </div>
 </div>
+<!--
+  End
+  Modal
+-->
 
-
+<!-- Start Modal 2 -->
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">تعديل الطلب</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Hide this modal and show the first with the button below.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#staticBackdrop" data-bs-toggle="modal">Back to first</button>
+      </div>
+    </div>
+  </div>
+</div>
+<a class="btn btn-primary" data-bs-toggle="modal" href="#staticBackdrop" role="button">Open first modal</a>
+<!-- End Modal 2 -->
 
 <script type="module">
   // Import the functions you need from the SDKs you need
@@ -195,6 +278,7 @@
     addDoc, deleteDoc, doc,
     query, where, orderBy, serverTimestamp,
     getDoc,
+    getDocs,
     updateDoc
   } from 'https://www.gstatic.com/firebasejs/9.9.1/firebase-firestore.js'
   // TODO: Add SDKs for Firebase products that you want to use
@@ -240,6 +324,7 @@
 
   // Get data to requests
   const colRef = collection(db, 'requests');
+  const colAssign = collection(db, 'requests');
   const list = document.querySelector('table tbody')
   onSnapshot(colRef, (snapshot) => {
     let books = []
@@ -249,6 +334,7 @@
       console.log(doc.id, " => ", doc.data().title);
       console.log(doc.id, " => ", doc.data().author);
       console.log('String is ', doc.toString());
+      console.log('map is ', doc.data().assign);
       list.innerHTML +=
         `
 			<tr>
@@ -266,7 +352,9 @@
 					${doc.data().status}
 				</td>
         <td>
-          <button class="btn-sm btn btn-primary dRequest">تعديل</button>
+          <button request-id="${doc.id}" type="button" class="btn btn-primary edit-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            تعديل
+          </button>
           <button class="btn-sm btn btn-danger dRequest">حذف</button>
         </td>
 			</tr>
@@ -274,9 +362,7 @@
     })
     console.log(books);
   })
-</script>
 
-<script>
   $('.dRequest').on('click', function () {
     $(this).parent().parent().remove();
   });
@@ -359,7 +445,46 @@
       }
     }
   }
-
   // End Sorting Table
 
+  // Delete Button
+  $(document).on('click', '.delete-request', function () {
+    console.log('delete button clicked');
+  })
+
+  // Edit Button 
+  $(document).on('click', '.edit-button', function () {
+    console.log(`edit button clicked ${this}`);
+
+    let id = $(this).attr('request-id');
+    console.log(id);
+
+    getDocs(colRef)
+      .then((snapshot) => {
+        let books = []
+        snapshot.docs.forEach((doc) => {
+          // books.push({ ...doc.data(), id: doc.id })
+          let time = doc.data().time;
+          let seconds = doc.data().time.seconds;
+          let date = new Date(seconds);
+          let assign = doc.data().assign;
+          $('#type').text(`${doc.data().type}`);
+          $('#room').text(`${doc.data().room}`);
+          $('#time').text(`${date}`);
+          $('#floor').text(`${doc.data().floor}`);
+          $('#description').text(`${doc.data().description}`);
+          console.log(doc.data().time)
+          console.log()
+          Object.entries(assign).forEach(item => {
+            console.log(item)
+            $('#innerModal')[0].innerHTML += item.toString();
+          })
+          // console.log(new Date(doc.data().time.seconds * 1000))
+        })
+        // console.log(books);
+      })
+      .catch(err => {
+        console.log(err.message);
+      })
+  })
 </script>
