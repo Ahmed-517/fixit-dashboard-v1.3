@@ -3,6 +3,7 @@
 body {
   font-size: .875rem;
   font-family: 'Cairo', sans-serif;
+  /* overflow: hidden; */
 }
 
 .feather {
@@ -12,7 +13,7 @@ body {
 
 .login {
   height: 100vh;
-  
+
 }
 
 .homeAdmin {
@@ -212,9 +213,104 @@ body {
 }
 
 /* Start Requests */
-tbody tr{
+tbody tr {
   cursor: pointer;
 }
+
 tbody tr:hover {
   background-color: #a0a0a0;
+}
+
+/* Start Progress Bar  */
+
+.wrapper {
+  width: 330px;
+  font-family: 'Helvetica';
+  font-size: 14px;
+  border: 1px solid #CCC;
+}
+
+.StepProgress {
+  position: relative;
+  padding-right: 45px;
+  list-style: none;
+}
+
+.StepProgress::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 15px;
+  width: 10px;
+  height: 100%;
+  border-right: 2px solid #CCC;
+}
+
+.StepProgress-item {
+  position: relative;
+  counter-increment: list;
+}
+
+.StepProgress-item:not(:last-child) {
+  padding-bottom: 20px;
+}
+
+.StepProgress-item::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  right: -30px;
+  height: 100%;
+  width: 10px;
+}
+
+.StepProgress-item::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: -37px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #CCC;
+  border-radius: 50%;
+  background-color: #FFF;
+  box-sizing: content-box;
+}
+
+.StepProgress-item.is-done::before {
+  border-right: 2px solid darkblue;
+}
+
+.StepProgress-item.is-done::after {
+  content: "✔";
+  font-size: 10px;
+  color: #FFF;
+  text-align: center;
+  border: 2px solid darkblue;
+  background-color: darkblue;
+}
+
+.StepProgress-item.current::before {
+  border-right: 2px solid darkblue;
+}
+
+.StepProgress-item.current::after {
+  box-sizing: content-box;
+  content: counter(list);
+  padding-top: 1px;
+  width: 19px;
+  height: 18px;
+  top: -4px;
+  right: -40px;
+  font-size: 14px;
+  text-align: center;
+  color: darkblue;
+  border: 2px solid darkblue;
+  background-color: white;
+}
+
+.StepProgress strong {
+  display: block;
 }
